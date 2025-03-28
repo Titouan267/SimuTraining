@@ -1,0 +1,102 @@
+/* Appliquer une police globale pour toutes les balises */
+
+* {
+    font-family: Arial, sans-serif;
+}
+ 
+/* Style pour les raccourcis clavier (kbd) */
+
+kbd {
+    background-color: #eee; /* Couleur de fond */
+    color: #333; /* Couleur du texte */
+    padding: 2px 4px; /* Espacement interne */
+    border-radius: 2px; /* Coins arrondis */
+    border: 1px solid gray; /* Bordure */
+}
+ 
+/* Style des liens */
+
+a {
+    color: #007BFF; /* Couleur des liens */
+    text-decoration: none; /* Pas de soulignement par défaut */
+}
+ 
+a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+ 
+/* Style pour les tableaux */
+
+table {
+    border-collapse: collapse; /* Fusion des bordures */
+    width: 100%; /* Largeur du tableau */
+}
+ 
+th, td {
+    border: 1px solid #ddd; /* Bordures fines */
+    padding: 8px; /* Espacement interne */
+    text-align: left; /* Alignement gauche */
+}
+ 
+th {
+    background-color: #f4f4f4; /* Fond clair pour les en-têtes */
+    font-weight: bold; /* Texte en gras */
+}
+
+#simulator {
+    display: grid; /* Disposition en grille */
+    height: calc(100vw*9/16); /* 16/9 de la largeur de la vue (100% View Width) */
+    grid-template-columns: 226fr 104fr 124fr 111fr 230fr;/* Liste des largeurs de colonne séparées par des espaces*/;
+    grid-template-rows: 135fr 59fr 50fr 23fr 105fr; /* Liste des hauteurs de ligne séparées par des espaces */;
+background-image: url("image.jpg");
+background-size: 100% 100%;
+}      
+
+#simulator div {
+    border: 1px solid black;
+}
+
+#vue {
+    grid-column: 1 / 6;
+    grid-row: 1 / 3;
+}
+
+#horizon-artificiel {
+    grid-column:  3;
+    grid-row: 2 /4;
+}
+
+#vitesse {
+    grid-column: 2 ;
+    grid-row: 2/4 ;
+}
+
+#altimetre {
+    grid-column: 4 ;
+    grid-row: 2 /4;
+}
+
+#gyroscope {
+    grid-column: 3 ;
+    grid-row: 5 ;
+}
+
+#variometre {
+    grid-column: 4 ;
+    grid-row: 5 ;
+}
+
+#indicateur-de-virage {
+    grid-column: 2 ;
+    grid-row: 5;
+}
+
+#manette-de-gaz {
+    grid-column: 5 ;
+    grid-row: 3 / 6;
+}
+
+#radio {
+    grid-column: 1 ;
+    grid-row: 3 / 6;
+}
