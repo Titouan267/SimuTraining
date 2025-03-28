@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulateur de Vol - Accueil</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="importmap">
+        {
+          "imports": {
+              "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js",
+              "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/"
+          }
+        }
+        </script>
 </head>
 <body>
     <nav>
@@ -15,7 +23,7 @@
     </nav>
     
     <main id="simulator">
-        <div id="vue"></div>
+        <canvas id="vue"></canvas>
         <div id="horizon-artificiel"></div>
         <div id="vitesse"></div>
         <div id="altimetre"></div>
@@ -29,6 +37,19 @@
     <p>Voici la maquette de l'interface du simulateur de vol rudimentaire :</p>
     <img src="image.jpg" alt="Maquette conceptuelle de l'interface du simulateur de vol" width="600"-->
     </main>
+    <script type="module">
+        const CAM_FOV = 60, CAM_NEAR = 0.1, CAM_FAR = 1000;
+        import * as THREE from 'three';
+
+        const view = document.getElementById('vue');
+        const camera = new THREE.PerspectiveCamera(CAM_FOV, view.clientWidth / view.clientHeight, CAM_NEAR, CAM_FAR);
+        const scene = new THREE.Scene();
+        const renderer = new THREE.WebGLRenderer({ canvas: view, antialias: true });
+
+        renderer.setAnimationLoop(()=>{  
+            renderer.render( scene, camera );
+        });
+    </script> 
 </body>
 </html>
 
